@@ -1,0 +1,239 @@
+/* ============================================================
+   StallUp — Base Styles & Design Tokens
+   ============================================================ */
+
+:root {
+  /* Palette */
+  --saffron: #E8651A;
+  --saffron-light: #F5874A;
+  --saffron-pale: #FDF0E8;
+  --saffron-dark: #C24F10;
+
+  --navy: #1A2340;
+  --navy-light: #2D3A5C;
+  --charcoal: #2C2C2C;
+  --charcoal-mid: #4A4A4A;
+
+  --cream: #FAFAF7;
+  --off-white: #F5F4F0;
+  --white: #FFFFFF;
+
+  --green: #1C7C4A;
+  --green-light: #28A05E;
+  --green-pale: #EAF5EF;
+
+  --amber: #D97706;
+  --amber-pale: #FEF3C7;
+
+  --red: #C0392B;
+  --red-pale: #FDEDEC;
+
+  --border: #E2E0D8;
+  --border-light: #EDECEA;
+  --muted: #7A7870;
+  --muted-light: #A09E98;
+
+  /* Typography */
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* Scale */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 21px;
+  --text-2xl: 26px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+  --text-5xl: 52px;
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 24px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-xl: 0 16px 40px rgba(0,0,0,0.14);
+
+  /* Transitions */
+  --t-fast: 120ms ease;
+  --t-base: 200ms ease;
+  --t-slow: 300ms ease;
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 60px;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font);
+  font-size: var(--text-base);
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--saffron); text-decoration: none; transition: color var(--t-fast); }
+a:hover { color: var(--saffron-dark); }
+
+img { max-width: 100%; display: block; }
+
+button { font-family: var(--font); cursor: pointer; border: none; outline: none; }
+input, select, textarea { font-family: var(--font); font-size: var(--text-base); }
+
+/* Utilities */
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-muted { color: var(--muted); }
+.text-saffron { color: var(--saffron); }
+.text-green { color: var(--green); }
+.text-navy { color: var(--navy); }
+.text-sm { font-size: var(--text-sm); }
+.text-xs { font-size: var(--text-xs); }
+.text-lg { font-size: var(--text-lg); }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: var(--sp-1); }
+.gap-2 { gap: var(--sp-2); }
+.gap-3 { gap: var(--sp-3); }
+.gap-4 { gap: var(--sp-4); }
+.gap-6 { gap: var(--sp-6); }
+.w-full { width: 100%; }
+.mt-1 { margin-top: var(--sp-1); }
+.mt-2 { margin-top: var(--sp-2); }
+.mt-3 { margin-top: var(--sp-3); }
+.mt-4 { margin-top: var(--sp-4); }
+.mt-6 { margin-top: var(--sp-6); }
+.mt-8 { margin-top: var(--sp-8); }
+.mb-2 { margin-bottom: var(--sp-2); }
+.mb-4 { margin-bottom: var(--sp-4); }
+.mb-6 { margin-bottom: var(--sp-6); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+.section {
+  padding: var(--sp-20) 0;
+}
+
+.section-sm {
+  padding: var(--sp-12) 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: var(--r-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-light); }
+
+/* Page transitions */
+#page-container { min-height: calc(100vh - var(--nav-height)); }
+
+.page-enter {
+  animation: fadeSlideIn 0.25s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--saffron);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: var(--sp-6) 0;
+}
+
+/* Section header */
+.section-header { margin-bottom: var(--sp-10); }
+.section-label {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: var(--sp-2);
+}
+.section-title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: var(--sp-3);
+}
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--muted);
+  max-width: 580px;
+}
+
+/* Grid layouts */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .container { padding: 0 var(--sp-4); }
+  .section { padding: var(--sp-12) 0; }
+  :root { --text-5xl: 36px; --text-4xl: 30px; --text-3xl: 24px; }
+}
